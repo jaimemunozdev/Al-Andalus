@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;500;700&display=swap" rel="stylesheet">
+    <title>El Colectivo - Al-Andalus</title>
+    <meta name="title" content="Al-Andalus StreetBall">
+    <meta name="description" content="El colectivo de los amantes del StreetBall en Andalucía. Noticias y eventos de la comunidad más perita.">
+    <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="assets/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="css/about.css">
+    <script src="js/about.js" defer></script>
+</head>
+<body>
+    
+<!-- 
+Header sencillo, cuenta con:
+    -H1 de la web, con el título y el logo en él
+    -Un menú de navegación que lleva a los otros archivos html de la web
+    -Un botón para desplegar este Nav, con la función de hacerlo responsive en pantallas más pequeñas
+ -->
+    <header class="header">
+        <h1 class="header__h1">
+            <a href="/" class="header__a" title="Inicio">
+                <img src="assets/logo.svg" alt="Al-Ándalus Logo" class="header__img">
+                <span class="header__span">Al-Andalus</span>
+            </a>
+        </h1>
+        <nav class="header__nav">
+            <ul class="header__ul">
+                <li class="header__li"><a href="about.html" class="header__a nav" title="¿Quiénes somos?">El Colectivo</a></li>
+                <li class="header__li"><a href="patrocinadores.html" class="header__a nav" title="Nuestros patrocinadores">Patrocinadores</a></li>
+                <li class="header__li"><a href="contacto.html" class="header__a nav" title="Contacta con nosotros">Contacto</a></li>
+            </ul>
+        </nav>
+        <button class="header__button">
+            <img src="assets/header-button.svg" alt="Menú">
+        </button>
+    </header>
+<!------ Header ------>
+
+<!-- 
+El Main cuenta con el contenido principal de la página: en este caso es una sección con el titular y dos párrafos
+ -->
+    <main class="main">
+
+        <section class="about">
+            <h2 class="about__h2">El Colectivo</h2>
+            <img src="assets/logo.svg" alt="Logo Al-Andalus" class="about__logo">
+            <p class="about__p">El colectivo Al-Andalus, nace tras el verano de 2023, fruto de la necesidad de más espacios y eventos donde los andaluces pudiesen practicar el StreetBall, o baloncesto callejero.</p>
+            <p class="about__p">Construir estas pistas por la extensa geografía andaluza nos ha permitido llevar hacia otros lugares la diversidad de Andalucía, nuestra querida comunidad, que empañada por los tópicos, esconde multitud de secretos bien guardados: historia, naturaleza, cultura... ¡y mucho arte!</p>
+    <!-- 
+    También para darle más valor visual a la sección, añadí un par de imágenes
+     -->
+            <div class="about__wrapper left">
+                <picture class="about__img">
+                    <source srcset="assets/pov.jpg" type="image/jpg">
+                    <img src="assets/pov.webp" alt="Jugando en un pueblo andaluz">
+                </picture>
+            </div>
+            <div class="about__wrapper right">
+                <picture class="about__img">
+                    <source srcset="assets/colectivo.jpg" type="image/jpg">
+                    <img src="assets/colectivo.webp" alt="Los miembros del colectivo">
+                </picture>
+            </div>
+        </section>
+
+    </main>
+<!------ Main ------>
+
+<!-- 
+El Footer cuenta con 3 partes diferenciadas:
+    -Logos de patrocinadores con enlaces hacia ellos
+    -Columnas con una breve introducción al Colectivo y el logo, menú de navegación de la web similar al del Header, y formulario para inscribirse a la Newsletter
+    -Créditos hacia mi como diseñador de la web, con los logos de GitHub y LinkedIn como enlaces hacia mis perfiles en ambas redes
+ -->
+    <footer class="footer">
+        <div class="footer__patrocinadores">
+            <ul class="footer__ul patrocinadores">
+                <li class="footer__li patrocinadores">
+                    <a href="https://sportpalace.es/" class="footer__a" title="Visita Sport Palace" target="_blank" rel="noreferrer"><img class="footer__patrocinador" src="assets/patrocinadores/sport-palace.svg" alt="Sport Palace"></a>
+                </li>
+                <li class="footer__li patrocinadores">
+                    <a href="https://www.instagram.com/jm.naturalfitness/" class="footer__a" title="Visita JM Natural Fitness" target="_blank" rel="noreferrer"><img class="footer__patrocinador" src="assets/patrocinadores/jmnf.svg" alt="JM Natural Fitness"></a>
+                </li>
+                <li class="footer__li patrocinadores">
+                    <a href="https://www.generadoraleatorio.es/" class="footer__a" title="Visita Generador Aleatorio" target="_blank" rel="noreferrer"><img class="footer__patrocinador" src="assets/patrocinadores/generador.svg" alt="Generador Aleatorio"></a>
+                </li>
+            </ul>
+        </div>
+        <div class="footer__columns">
+            <div class="footer__column us">
+                <a href="/" class="footer__a" title="Inicio"><img src="assets/logo.svg" alt="Mi logo" class="footer__logo"></a>
+                <p class="footer__p">Al-Andalus, tu colectivo de <strong>Andalucía</strong> para el <strong>StreetBall</strong>, del StreetBall para Andalucía.</p>
+            </div>
+            <div class="footer__column">
+                <nav class="footer__nav">
+                    <ul class="footer__ul">
+                        <li class="footer__li"><a href="about.html" class="footer__a nav" title="¿Quiénes somos?">El colectivo</a></li>
+                        <li class="footer__li"><a href="patrocinadores.html" class="footer__a nav" title="Nuestros patrocinadores">Patrocinadores</a></li>
+                        <li class="footer__li"><a href="contacto.html" class="footer__a nav" title="Contacta con nosotros">Contacto</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="footer__column newsletter">
+                <span class="footer__span">Newsletter</span>
+                <form method="post" action="#" class="footer__form" id="newsletter">
+                    <input type="email" placeholder="Email" id="email" autocomplete="off" required>
+                    <input type="submit" value="Suscríbeme">
+                </form>
+            </div>
+        </div>
+        <div class="footer__creator">
+            <div class="footer__column creator"><span class="footer__span creator">Esta web ha sido diseñada por Jaime Muñoz</span></div>
+            <div class="footer__column creator">
+                <ul class="footer__rrss">
+                    <li class="footer__li">
+                        <a href="https://github.com/jaimemunozdev" class="footer__a" title="Visita mi GitHub" target="_blank" rel="noreferrer">
+                            <svg class="footer__svg" xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" viewBox="0 0 16 16">
+                                <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8"/>
+                            </svg>
+                        </a>
+                    </li>
+                    <li class="footer__li">
+                        <a href="https://www.linkedin.com/in/jaimemga/" class="footer__a" title="Visita mi LinkedIn" target="_blank" rel="noreferrer">
+                            <svg class="footer__svg" xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" viewBox="0 0 16 16">
+                                <path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854zm4.943 12.248V6.169H2.542v7.225zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248S2.4 3.226 2.4 3.934c0 .694.521 1.248 1.327 1.248zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016l.016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225z"/>
+                            </svg>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+<!------ Footer ------>
+
+</body>
+</html>

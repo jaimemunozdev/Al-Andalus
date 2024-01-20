@@ -1,0 +1,460 @@
+/* Reset utilizado en la página web */
+*{
+    margin:0;
+    padding: 0;
+    border:0;
+    box-sizing: border-box;
+}
+li{
+    list-style: none;
+}
+html{
+    font-size: 100%;
+}
+h1 , h2 , h3 , h4 , h5 , h6 , p , strong{
+    font-weight: inherit;
+    font-size: inherit;
+    font-style: normal;
+}
+img , svg, video, iframe{
+    display: block;
+    width: 100%;
+    max-width: 100%;
+}
+a{
+    color:inherit;
+    text-decoration: none;
+}
+form, input, textarea, select, option, label, button{
+    display: block;
+    font-size: 1em;
+    font-family: inherit;
+    background-color: transparent;
+}
+body{
+    font-family: 'Unbounded', sans-serif; /* Unbounded es la tipografía utilizada en toda la web */
+    background-color: #000;
+}
+/* ---- Reset ---- */
+
+/* ---- Estilos utilizados para el Header de la web ---- */
+.header{
+    width: 100%;
+    background-color: #000;
+    padding: 1.5rem 3rem;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+}
+.header__h1{
+    font-size: 2rem;
+    font-weight: 700;
+    color: #fff;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+    align-items: center;
+    gap: .5rem;
+}
+.header__a{
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: .5rem;
+}
+.header__img{
+    width: 6rem;
+}
+.header__ul{
+    width: 100%;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+}
+.header__a.nav{
+    width: 100%;
+    font-weight: 500;
+    color: #fff;
+    padding: .2rem;
+    border-radius: .625rem;
+    transition: letter-spacing .4s ease;
+}
+.header__a.nav:hover{
+    letter-spacing: .25rem;
+}
+.header__button{
+    width: 2.5rem;
+    height: 2.5rem;
+    cursor: pointer;
+    display: none;
+}
+/* ---- Header ---- */
+
+/* ---- Estilos utilizados para el Main de la página ---- */
+.main{
+    background-color: #285943; /* ---- Uno de los colores predominantes de la web ---- */
+}
+.about{
+    width: 100%;
+    padding: 2rem 2rem 3rem;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1.5rem;
+    animation: venir 1s ease 1 forwards;
+    position: relative;
+}
+/* ---- Animación para que la sección About aparezca de izquierda a derecha al cargar la web ---- */
+@keyframes venir {
+    from{transform: translateX(-100vw)}
+    to{transform: translateY(0);}
+}
+.about__h2{
+    max-width: 50%;
+    background-color: #AAFCB8; /* ---- Uno de los colores predominantes de la web ---- */
+    padding: 1rem 3rem;
+    font-size: 1.75rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    border: .125rem solid black;
+    box-shadow: .4375rem .625rem .9375rem #000;
+    text-align: center;
+}
+.about__logo{
+    width: 30vw;
+    filter: drop-shadow(0 0 .5rem #000);
+    animation: girar 2s ease-out .5s 1 forwards;
+}
+/* ---- Animación para que el logo de About haga un giro de 360 grados con 1/2 segundo de delay ---- */
+@keyframes girar {
+    from {transform: rotate(-360deg);}
+    to{transform: rotate(0);}
+} 
+.about__p{
+    width: 70%;
+    font-size: 1.25rem;
+    color: #fff;
+    text-align: center;
+}
+.about__wrapper{
+    width: 20%;
+    background-color: #fff;
+    padding: 1vw 1vw 2.5vw; /* Con este padding le damos aspecto de foto revelada instantaneamente */
+    position: absolute;
+    box-shadow: .3125rem .3125rem .625rem #000;
+}
+/* Con estos estilos coloco las fotos de manera decorativa como "fondo" */
+.left{
+    width: 16%;
+    top: 20%;
+    left: 5%;
+    transform: rotate(-12deg);
+}
+.right{
+    top: 8%;
+    right: 8%;
+    transform: rotate(20deg);
+}
+/* ---- Main ---- */
+
+/* ---- Estilos del Footer ---- */
+.footer{
+    width: 100%;
+    background-color: #000;
+    padding: 2rem;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    color: #fff;
+}
+.footer__patrocinadores{
+    width: 90%;
+}
+.footer__ul.patrocinadores{
+    width: 100%;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-around;
+    align-items: center;
+    gap: 1rem;
+}
+.footer__li.patrocinadores{
+    width: calc(100% / 3);
+    padding: .5rem;
+}
+.footer__patrocinador{
+    width: 100%;
+}
+.footer__columns{
+    width: 100%;
+    padding: .5rem;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+}
+.footer__column{
+    width: calc(100% / 3);
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+.footer__column.us{
+    align-items: flex-start;
+}
+.footer__logo{
+    width: 35%;
+}
+.footer__nav{
+    width: 100%;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+}
+.footer__ul{
+    width: 80%;
+    margin: auto;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 1.5rem;
+}
+.footer__li{
+    width: 100%;
+}
+.footer__a.nav{
+    width: 100%;
+    font-weight: 500;
+    color: #fff;
+    padding: .2rem;
+    border-radius: .625rem;
+    transition: all .4s ease;
+}
+.footer__a.nav:hover{
+    letter-spacing: .25rem;
+}
+.footer__column.newsletter{
+    align-items: flex-start;
+    gap: 1rem;
+}
+.footer__span{
+    font-size: 1.5rem;
+}
+.footer__form{
+    display: flex;
+    flex-flow: column nowrap;
+    gap: .75rem;
+}
+.footer input{
+    font-size: .9375rem;
+    padding: .3125rem;
+    border-bottom: .125rem solid #3b3b3b;
+    color: #fff;
+}
+.footer input[type=submit]{
+    max-width: 80%;
+    background-color: #3b3b3b;
+    color: #fff;
+    padding: .45rem;
+    cursor: pointer;
+    box-shadow: inset 0 0 .3125rem #565656;
+    transition: all .5s ease;
+}
+.footer input[type=submit]:hover{
+    background-color: #AAFCB8; /* ---- Uno de los colores predominantes de la web ---- */
+    color: #000;
+}
+.footer__creator{
+    width: 100%;
+    padding: .5rem;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+}
+/* ---- Utilicé aquí before por primera vez, con el objetivo de crear una línea separadora para diferenciar esta parte ---- */
+.footer__creator::before{
+    content: '';
+    display: block;
+    width: 95%;
+    height: .0625rem;
+    background-color: #3b3b3b;
+    margin: .5rem 0 1rem;
+}
+.footer__column.creator{
+    width: auto;
+}
+.footer__span.creator{
+    font-size: 1rem;
+    text-align: center;
+}
+.footer__rrss{
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+}
+.footer__svg{
+    width: 2rem;
+    transition: all .5s ease;
+}
+.footer__svg:hover{
+    fill: #AAFCB8;
+    transform: scale(1.15);
+}
+/* ---- Footer ---- */
+
+/* ---- Aquí comienzan los media-queries que necesité para cambiar algunas cosas de la web y hacerla responsive ---- */
+  /* Estilos para pantallas con un ancho máximo de 1024px */
+  @media (max-width: 1024px){
+    .header{padding: 1.5rem 2rem;}
+}
+  /* Estilos para pantallas con un ancho máximo de 960px */
+@media (max-width: 960px){
+    .header{
+        position: fixed;
+        z-index: 2;
+    }
+    .header__nav{
+        width: 0;
+        background-color: #000;
+        position: absolute;
+        top: 7.375rem;
+        right: 0;
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: flex-start;
+        align-items: center;
+        transition: width .5s ease;
+        overflow: hidden;
+        z-index: 1;
+    }
+    .header__nav.active{
+        width: 40vw;
+    }
+    .header__ul{
+        height: 100%;
+        padding: 3rem;
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: center;
+        align-items: flex-start;
+        gap: 2rem;
+    }
+    .header__li{
+        min-width: 8rem;
+    }
+    .header__button{
+        display: block;
+        transition: transform .5s ease;
+    }
+    .header__button.active{
+        transform: rotate(-90deg);
+    }
+    .main{
+        padding-top: 7.375rem;
+    }
+    .about{
+        width: 100%;
+        align-items: flex-start;
+        padding: 1rem 0 2rem;
+    }
+    .about__h2{
+        max-width: 85%;
+        font-size: 1.5rem;
+        padding: 1rem 2rem;
+        border: none;
+    }
+    .about__logo{
+        margin: auto;
+    }
+    .about__p{
+        width: 90%;
+        margin: auto;
+    }
+    .footer__patrocinadores{
+        width: 100%;
+    }
+    .footer__ul.patrocinadores{
+        flex-flow: row wrap;
+    }
+    .footer__li.patrocinadores{
+        width: 45%;
+    }
+}
+  /* Estilos para pantallas con un ancho máximo de 768px */
+@media (max-width: 768px){
+    .header__nav.active{width: 70vw;}
+    .about__h2{
+        font-size: 1.25rem;
+        text-align: start;
+    }
+    .about__p{
+        font-size: 1rem;
+    }
+    .about__wrapper{
+        display: none;
+    }
+    .footer__columns , .footer__span.creator , .footer__form {
+        font-size: .8rem;
+    }
+    .footer__column.newsletter .footer__span{
+        font-size: 1.25rem;
+    }
+    .footer__columns{
+        flex-flow: column nowrap;
+        align-items: flex-start;
+        padding: 0;
+    }
+    .footer__column{
+        width: 100%;
+        align-items: flex-start;
+    }
+    .footer__columns .footer__column::after{ /* ---- Aquí utilicé after para separar las columnas de .footer__columns, ya que al situarse verticalmente, mo se apreciaban bien ---- */
+        content: '';
+        display: block;
+        width: 100%;
+        height: .0625rem;
+        background-color: #3b3b3b;
+        margin: 1rem 0 0;
+    }
+    .footer__columns .footer__column:last-child::after{
+        display: none;
+    }
+    .footer__creator{
+        padding: 0;
+    }
+    .footer__creator::before{
+        width: 100%;
+    }
+    .footer__ul{width: 100%;}
+}
+  /* Estilos para pantallas con un ancho máximo de 480px */
+@media (max-width: 480px){
+    .header__span{
+        display: none; /* ---- Para pantallas de máx 480 píxeles, oculté el span del h1 ya que visualmente quedaba mejor solo el logo ---- */
+    }
+    .footer{
+        padding: 1rem;
+    }
+    .footer__creator{
+        gap: .5rem;
+    }
+    .footer__svg{
+        width: 1.5rem;
+    }
+}

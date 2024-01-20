@@ -1,0 +1,924 @@
+/* Reset utilizado en la página web */
+*{
+    margin:0;
+    padding: 0;
+    border:0;
+    box-sizing: border-box;
+}
+li{
+    list-style: none;
+}
+html{
+    font-size: 100%;
+}
+h1 , h2 , h3 , h4 , h5 , h6 , p , strong{
+    font-weight: inherit;
+    font-size: inherit;
+    font-style: normal;
+}
+img , svg, video, iframe{
+    display: block;
+    width: 100%;
+    max-width: 100%;
+}
+a{
+    color:inherit;
+    text-decoration: none;
+}
+form, input, textarea, select, option, label, button{
+    display: block;
+    font-size: 1em;
+    font-family: inherit;
+    background-color: transparent;
+}
+body{
+    font-family: 'Unbounded', sans-serif; /* Unbounded es la tipografía utilizada en toda la web */
+    background-color: #000;
+}
+/* ---- Reset ---- */
+
+/* ---- Estilos utilizados para el Header de la web ---- */
+.header{
+    width: 100%;
+    background-color: #000;
+    padding: 1.5rem 3rem;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+}
+.header__h1{
+    font-size: 2rem;
+    font-weight: 700;
+    color: #fff;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+    align-items: center;
+    gap: .5rem;
+}
+.header__a{
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: .5rem;
+}
+.header__img{
+    width: 6rem;
+}
+.header__ul{
+    width: 100%;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+}
+.header__a.nav{
+    width: 100%;
+    font-weight: 500;
+    color: #fff;
+    padding: .2rem;
+    border-radius: .625rem;
+    transition: letter-spacing .4s ease;
+}
+.header__a.nav:hover{
+    letter-spacing: .25rem;
+}
+.header__button{
+    width: 2.5rem;
+    height: 2.5rem;
+    cursor: pointer;
+    display: none;
+}
+/* ---- Header ---- */
+
+/* ---- Estilos utilizados para el Main de la página ---- */
+.main{
+    background-color: #285943; /* ---- Uno de los colores predominantes de la web ---- */
+}
+/* ---- Estilos de Update ---- */
+.update{
+    width: 100%;
+    padding: 2rem;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+    margin: auto;
+    animation: venir 1s ease 1 forwards;
+}
+/* ---- Animación para que la sección Update aparezca de izquierda a derecha al cargar la web ---- */
+@keyframes venir {
+    from{transform: translateX(-100vw)}
+    to{transform: translateY(0);}
+}
+.update__section{
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+.update__section.noticias{
+    width: 60%;
+}
+.update__section.eventos{
+    width: 40%;
+}
+.update__h2 , .finder__h2{ /* ---- Los títulos de las dos secciones de Update comparten estilo con el del Finder ---- */
+    background-color: #AAFCB8;
+    padding: 1rem 3rem;
+    font-size: 1.75rem;
+    font-weight: 500;
+    box-shadow: inset 0 0 1.25rem #000;
+    text-transform: uppercase;
+    border: .125rem solid black;
+    box-shadow: .4375rem .625rem .9375rem #000;
+    text-align: start;
+}
+.update__carrousel{
+    width: 100%;
+    background-color: #000;
+    border: .125rem solid black;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    overflow: hidden;
+    position: relative;
+}
+.update__largo{
+    width: 400%;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+    transition: transform .5s ease;
+}
+.update__noticia{
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: 35% 65%;
+    grid-template-rows: 30% 70%;
+    gap: 1rem;
+}
+.update__h3{
+    width: 100%;
+    background-color: rgba(0, 0, 0, .75);
+    padding: 1rem;
+    color: #fff;
+    font-size: 2rem;
+    grid-column: 1;
+    grid-row: 1;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+}
+.update__p{
+    width: 100%;
+    font-size: .9rem;
+    background-color: rgba(0, 0, 0, .75);
+    padding: 1rem;
+    color: #fff;
+    grid-column: 1;
+    grid-row: 2;
+}
+.update__wrapper{
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    grid-column: 2;
+    grid-row: span 2;
+    overflow: hidden;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+    clip-path: polygon(0 0, 85% 0, 100% 100%, 15% 100%); /* Me he ayudado de la página https://bennettfeely.com/clippy/ para realizar la forma de la caja contenedora de la imagen con la propiedad clip-path */
+}
+.update__img{
+    height: 100%;
+    object-fit: cover;
+}
+.update__buttons{
+    width: 100%;
+    background-color: #AAFCB8; /* ---- Uno de los colores predominantes de la web ---- */
+    padding: .5rem;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    border-top: .125rem solid #000;
+    box-shadow: inset 0 0 .5rem #000;
+}
+/* ---- Botones del carrousel ---- */
+.update__button{
+    width: 1rem;
+    height: 1rem;
+    background-color: #9a9a9a;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: inset 0 0 .125rem #000;
+    transition: background-color .3s ease;
+}
+/* ---- Cambia de color al seleccionar otra noticia del carrousel, para saber en cuál se sitúa */
+.update__button.active{
+    background-color: #F88900; /* ---- Uno de los colores predominantes de la web ---- */
+}
+.update__ul{
+    width: 100%;
+    background-color: #AAFCB8; /* ---- Uno de los colores predominantes de la web ---- */
+    padding: 1rem;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-around;
+    align-items: center;
+    border: .125rem solid black;
+    box-shadow: inset 0 0 .6rem #000;
+}
+.update__li{
+    width: 100%;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+    align-items: center;
+}
+.update__date{
+    font-size: .9rem;
+    text-align: center;
+}
+.update__event{
+    font-size: 1.15rem;
+    text-align: center;
+}
+/* ---- Update ---- */
+/* ---- Estilos del Finder ---- */
+.finder{
+    width: 100%;
+    padding: 0 2rem 2rem;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 1rem;
+}
+.finder__tablon{
+    width: 100%;
+    background-color: #F88900; /* ---- Uno de los colores predominantes de la web ---- */
+    padding: 3rem 2rem;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+    gap: 2.5rem;
+    position: relative;
+    border: .125rem solid black;
+    border-radius: 1.875rem;
+    box-shadow: inset 0 0 1.5rem #000;
+}
+.finder__listas{
+    width: 20%;
+    position: relative;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+}
+.finder__ul{
+    width: 90%;
+    background-color: #134611; /* ---- Uno de los colores predominantes de la web ---- */
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    gap: .75rem;
+    border: .125rem solid white;
+    border-radius: .625rem;
+    box-shadow: 0 0 1.5rem #000;
+    padding: .625rem;
+    transition: opacity .5s ease;
+    opacity: 1;
+}
+.finder__ul.active{
+    opacity: 0;
+    pointer-events: none;
+}
+.finder__courts{
+    width: 100%;
+    min-height: 20rem;
+    background-color: #134611;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-evenly;
+    align-items: center;
+    position: absolute;
+    top: calc(50% - (20rem / 2)); /* ---- Para centrar verticalmente al medio dentro del tablón ---- */
+    left: 2rem;
+    gap: 1rem;
+    border: .125rem solid white;
+    border-radius: .625rem;
+    box-shadow: 0 0 1.5rem #000;
+    padding: 1rem;
+    transition: opacity .4s ease;
+    opacity: 0;
+    pointer-events: none;
+}
+.finder__courts.active{
+    opacity: 1;
+    pointer-events: auto;
+}
+.finder__li{
+    padding: .5rem;
+}
+.finder__button , .finder__open{
+    width: 100%;
+    padding: .2rem .4rem;
+    color: #fff;
+    font-size: 1.5rem;
+    font-weight: 500;
+    border-radius: .625rem;
+    cursor: pointer;
+    transition: all .5s ease;
+}
+.finder__button:hover , .finder__open:hover{
+    background-color: #fff;
+    color: #134611; /* ---- Uno de los colores predominantes de la web ---- */
+}
+.finder__mapas{
+    width: 80%;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+    opacity: 1;
+    position: relative;
+}
+.finder__andalucia{
+    width: 85%;
+    filter: drop-shadow(0 0 1.5rem #000);
+    opacity: 1;
+    pointer-events: auto;
+    transition: opacity .5s ease;
+}
+.finder__andalucia.active{
+    opacity: 0;
+    pointer-events: none;
+}
+.finder__provincias{
+    width: 70%;
+    height: 115.6%;
+    position: absolute;
+}
+.finder__provincia{
+    width: 85%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity .5s ease;
+}
+.finder__provincia.active{
+    filter:drop-shadow(0 0 1.5rem #000);
+    opacity: 1;
+    pointer-events: auto;
+}
+.finder__back{
+    filter: drop-shadow(0 0 1.5rem #000);
+    position: absolute;
+    top: 2.5rem;
+    right: 2.5rem;
+    z-index: 1;
+    opacity: 0;
+    pointer-events: none;
+    cursor: pointer;
+    transition: opacity .5s ease;
+}
+.finder__back.active{
+    opacity: 1;
+    pointer-events: auto;
+}
+/* ---- Finder ---- */
+
+/* ---- Estilos del Lightbox ---- */
+.lightbox{
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, .65);
+    padding: 1rem 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity .5s ease;
+    visibility: hidden; /* Añadí esta propiedad ya que hacía un efecto raro al cargar, en el que seveían los Lightbox durante un breve período de tiempo, y debía estar oculto hasta interaccionar con el Finder */
+}
+.lightbox.active{
+    opacity: 1;
+    pointer-events: auto;
+    z-index: 2;
+    visibility: visible;
+}
+.lightbox__pista{
+    width: 70%;
+    position: absolute;
+    left: calc((100% - 70%) / 2); /* ---- Para centrar horizontalmente "cada lightbox" en la pantalla. Verticalmente lo hice mediante JavaScript ---- */
+    padding: 1.5rem;
+    background-color: #134611; /* ---- Uno de los colores predominantes de la web ---- */
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    color: white;
+    border: .125rem solid white;
+    border-radius: 1.25rem;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity .5s ease;
+}
+.lightbox__pista.active{
+    opacity: 1;
+    pointer-events: auto;
+}
+.lightbox__h1{
+    background-color: #AAFCB8; /* ---- Uno de los colores predominantes de la web ---- */
+    color: #000;
+    padding: .75rem 1.5rem;
+    font-size: 1.5rem;
+    font-weight: 500;
+    box-shadow: inset 0 0 1.25rem #000;
+    text-transform: uppercase;
+    border: .125rem solid black;
+    box-shadow: .4375rem .625rem .9375rem #000;
+    text-align: center;
+}
+.lightbox__button{
+    width: 4rem;
+    position: absolute;
+    top: .5rem;
+    right: .5rem;
+    cursor: pointer;
+}
+.lightbox__p{
+    font-size: .9rem;
+}
+.lightbox__media{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1.5rem;
+}
+.lightbox__picture{
+    width: 58.5%;
+    border: .0625rem solid white;
+    border-radius: 1.25rem;
+}
+.lightbox__img{
+    border-radius: 1.25rem;
+}
+.lightbox__wrapper{
+    width: 41.5%;
+    position: relative;
+    overflow: hidden;
+    padding-top: 56.25%; /* ---- De esta manera conseguí hacer Responsive los iframe, ya que no lo conseguía por mis medios. Saqué el tip de el siguiente tutorial https://www.youtube.com/watch?v=QG7JQkeaJy4 ---- */
+}
+.lightbox__iframe{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 1rem;
+}
+.lightbox__a{
+    display: none;
+    font-size: .875rem;
+    text-decoration: underline;
+}
+/* ---- Lightbox ---- */
+/* ---- Main ---- */
+
+/* ---- Estilos del Footer ---- */
+.footer{
+    width: 100%;
+    background-color: #000;
+    padding: 2rem;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    color: #fff;
+}
+.footer__patrocinadores{
+    width: 90%;
+}
+.footer__ul.patrocinadores{
+    width: 100%;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-around;
+    align-items: center;
+    gap: 1rem;
+}
+.footer__li.patrocinadores{
+    width: calc(100% / 3);
+    padding: .5rem;
+}
+.footer__patrocinador{
+    width: 100%;
+}
+.footer__columns{
+    width: 100%;
+    padding: .5rem;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+}
+.footer__column{
+    width: calc(100% / 3);
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+.footer__column.us{
+    align-items: flex-start;
+}
+.footer__logo{
+    width: 35%;
+}
+.footer__nav{
+    width: 100%;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+}
+.footer__ul{
+    width: 80%;
+    margin: auto;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 1.5rem;
+}
+.footer__li{
+    width: 100%;
+}
+.footer__a.nav{
+    width: 100%;
+    font-weight: 500;
+    color: #fff;
+    padding: .2rem;
+    border-radius: .625rem;
+    transition: all .4s ease;
+}
+.footer__a.nav:hover{
+    letter-spacing: .25rem;
+}
+.footer__column.newsletter{
+    align-items: flex-start;
+    gap: 1rem;
+}
+.footer__span{
+    font-size: 1.5rem;
+}
+.footer__form{
+    display: flex;
+    flex-flow: column nowrap;
+    gap: .75rem;
+}
+.footer input{
+    font-size: .9375rem;
+    padding: .3125rem;
+    border-bottom: .125rem solid #3b3b3b;
+    color: #fff;
+}
+.footer input[type=submit]{
+    max-width: 80%;
+    background-color: #3b3b3b;
+    color: #fff;
+    padding: .45rem;
+    cursor: pointer;
+    box-shadow: inset 0 0 .3125rem #565656;
+    transition: all .5s ease;
+}
+.footer input[type=submit]:hover{
+    background-color: #AAFCB8; /* ---- Uno de los colores predominantes de la web ---- */
+    color: #000;
+}
+.footer__creator{
+    width: 100%;
+    padding: .5rem;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+}
+/* ---- Utilicé aquí before por primera vez, con el objetivo de crear una línea separadora para diferenciar esta parte ---- */
+.footer__creator::before{
+    content: '';
+    display: block;
+    width: 95%;
+    height: .0625rem;
+    background-color: #3b3b3b;
+    margin: .5rem 0 1rem;
+}
+.footer__column.creator{
+    width: auto;
+}
+.footer__span.creator{
+    font-size: 1rem;
+    text-align: center;
+}
+.footer__rrss{
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+}
+.footer__svg{
+    width: 2rem;
+    transition: all .5s ease;
+}
+.footer__svg:hover{
+    fill: #AAFCB8;
+    transform: scale(1.15);
+}
+/* ---- Footer ---- */
+
+/* ---- Aquí comienzan los media-queries que necesité para cambiar algunas cosas de la web y hacerla responsive ---- */
+  /* Estilos para pantallas con un ancho máximo de 1024px */
+@media (max-width: 1024px){
+    .header{padding: 1.5rem 2rem;}
+    .update__ul li:nth-child(1n + 6){display: none}
+    .finder__tablon{
+        padding: 2rem;
+        flex-flow: column nowrap;
+        gap: 3rem;
+        max-height: 48rem;
+    }
+    .finder__listas{width: 85%;}
+    .finder__mapas{width: 100%;}
+    .finder__ul{
+        width: 100%;
+        flex-flow: row wrap;
+    }
+    .finder__button , .finder__open{font-size: 1.3rem;}
+    .finder__courts{
+        width: 80%;
+        min-height: 12.5rem;
+        flex-flow: row wrap;
+        top: 0;
+        left: calc((100% - 80%) / 2);
+    }
+    .finder__back{
+        width: 3.5rem;
+        top: 1rem;
+        right: 1rem;
+    }
+    .lightbox__pista{
+        width: 90%;
+        left: calc((100% - 90%) / 2);
+    }
+}
+  /* Estilos para pantallas con un ancho máximo de 960px */
+@media (max-width: 960px){
+    .header{
+        position: fixed;
+        z-index: 2;
+    }
+    .header__nav{
+        width: 0;
+        background-color: #000;
+        position: absolute;
+        top: 7.375rem;
+        right: 0;
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: flex-start;
+        align-items: center;
+        transition: width .5s ease;
+        overflow: hidden;
+        z-index: 1;
+    }
+    .header__nav.active{
+        width: 40vw;
+    }
+    .header__ul{
+        height: 100%;
+        padding: 3rem;
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: center;
+        align-items: flex-start;
+        gap: 2rem;
+    }
+    .header__li{
+        min-width: 8rem;
+    }
+    .header__button{
+        display: block;
+        transition: transform .5s ease;
+    }
+    .header__button.active{
+        transform: rotate(-90deg);
+    }
+    .main{
+        padding-top: 7.375rem;
+    }
+    .update , .finder{
+        flex-flow: column nowrap;
+        align-items: flex-start;
+        padding: 1rem 0;
+    }
+    .update__carrousel , .update__ul{
+        border-left: none;
+        border-right: none;
+        max-height: none;
+    }
+    .update__section.noticias , .update__section.eventos{
+        width: 100%;
+        align-items: flex-start; /* ---- En pantallas más pequeñas, todos las secciones ocupan el 100% del ancho de pantalla, y los títulos se colocan pegados al margen izquierdo ---- */
+    }
+    .update__h2 , .finder__h2{
+        max-width: 85%;
+        font-size: 1.5rem;
+        padding: 1rem 2rem;
+        border: none;
+    }
+    .update__ul{
+        height: auto;
+        gap: 1.5rem;
+        min-height: 0;
+    }
+    .update__li{
+        flex-flow: row nowrap;
+    }
+    .update__date{
+        font-size: .8rem;
+    }
+    .update__event{
+        font-size: 1rem;
+    }
+    .update__ul li:nth-child(1n + 6){display: none} /* ---- En formatos de pantalla más pequeñas, se muestran menos eventos en pantalla, para que esta sección no ocupe tanto verticalmente. De esta manera oculté los últimos, manteniendo los más recientes a la vista ---- */
+    .finder{
+        padding: 0;
+    }
+    .finder__tablon{
+        border: none;
+        border-radius: 0;
+        padding: 2rem 1rem;
+    }
+    .footer__patrocinadores{
+        width: 100%;
+    }
+    .footer__ul.patrocinadores{
+        flex-flow: row wrap;
+    }
+    .footer__li.patrocinadores{
+        width: 45%;
+    }
+}
+  /* Estilos para pantallas con un ancho máximo de 768px */
+@media (max-width: 768px){
+    .header__nav.active{width: 70vw;}
+    .update__h2 , .finder__h2{
+        font-size: 1.25rem;
+        text-align: start;
+    }
+    .update__noticia{
+        grid-template-columns: 0% 100%;
+        position: relative;
+    }
+    .update__h3{
+        background-color: transparent;
+        padding: 1rem;
+        position: absolute;
+        bottom: 0;
+        z-index: 1;
+        box-shadow: inset 0 0 7rem #000;
+    }
+    .update__p{display: none;}
+    .update__wrapper{
+        transform: translateX(20%);
+        width: 80%;
+    }
+    .update__carrousel , .update__img{
+        min-height: 0;
+    }
+    .lightbox__button{width: 3rem}
+    .lightbox__h1{
+        max-width: 75%;
+        font-size: 1.25rem;
+    }
+    .lightbox__p{
+        font-size: .8rem;
+    }
+    .footer__columns , .footer__span.creator , .footer__form {
+        font-size: .8rem;
+    }
+    .footer__column.newsletter .footer__span{
+        font-size: 1.25rem;
+    }
+    .footer__columns{
+        flex-flow: column nowrap;
+        align-items: flex-start;
+        padding: 0;
+    }
+    .footer__column{
+        width: 100%;
+        align-items: flex-start;
+    }
+    .footer__columns .footer__column::after{ /* ---- Aquí utilicé after para separar las columnas de .footer__columns, ya que al situarse verticalmente, mo se apreciaban bien ---- */
+        content: '';
+        display: block;
+        width: 100%;
+        height: .0625rem;
+        background-color: #3b3b3b;
+        margin: 1rem 0 0;
+    }
+    .footer__columns .footer__column:last-child::after{
+        display: none;
+    }
+    .footer__creator{
+        padding: 0;
+    }
+    .footer__creator::before{
+        width: 100%;
+    }
+    .footer__ul{width: 100%;}
+}
+  /* Estilos para pantallas con un ancho máximo de 720px */
+@media (max-width: 720px){
+    .update__ul{
+        gap: 1.25rem;
+    }
+    .update__li{
+        flex-flow: column nowrap;
+    }
+}
+  /* Estilos para pantallas con un ancho máximo de 558px */
+@media (max-width: 558px){
+    .finder__listas{width: 100%}
+    .finder__ul{gap: .5rem}
+    .finder__courts{gap: .5rem}
+    .finder__button , .finder__open {font-size: 1rem}
+    .finder__back{
+        width: 2.75rem;
+        top: .5rem;
+        right: .5rem;
+    }
+    .lightbox__button{
+        width: 2.5rem;
+    }
+}
+  /* Estilos para pantallas con un ancho máximo de 480px */
+@media (max-width: 480px){
+    .header__span{
+        display: none; /* ---- Para pantallas de máx 480 píxeles, oculté el span del h1 ya que visualmente quedaba mejor solo el logo ---- */
+    }
+    .update__h3{
+        font-size: 1.25rem;
+    }
+    .lightbox__picture{
+        width: 100%;
+    }
+    .lightbox__wrapper{
+        display: none; /* ---- La página tenía errores al cargar y al hacer zoom en móvil, tras varias pruebas descubrí que se debía a los iframe, por lo que decidí prescindir de ellos, y cambiarlos por un enlace a Google Maps, que a continuación se muestra ---- */
+    }
+    .lightbox__a{
+        display: block; /* ---- Aquí se muestra el enlace a Google Maps para las ubicaciones que se veían como iframe en pantallas más grandes ---- */
+    }
+    .finder__courts{
+        width: 75%;
+        left: calc((100% - 75%) / 2);
+    }
+    .footer{
+        padding: 1rem;
+    }
+    .footer__creator{
+        gap: .5rem;
+    }
+    .footer__svg{
+        width: 1.5rem;
+    }
+}
