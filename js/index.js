@@ -30,21 +30,18 @@ console.log(updateLargo)
     // Le REMOVE 'active' a TODOS .update__button
     // Le ADD 'active' a .update__button de MISMO INDEX
 
-updateButton.forEach((eachUpdateButton, index) => {
-    updateButton[index].addEventListener('click', () => {
-        
+updateButton.forEach((eachUpdateButton, index) => 
+    updateButton[index].addEventListener('click', () => {   
         // Declaro la variable cálculo, que utilizaré como estilo aplicado a .update__largo
         let calculo = index * (100 / 4)
         // La muestro por consola para comprobar que ejecuta bien el cálculo
         console.log(calculo)
 
         updateLargo.style.transform = `translateX(-${calculo}%)`
-        updateButton.forEach((eachUpdateButton, index) => {
-            updateButton[index].classList.remove('active')
-        })
+        updateButton.forEach((eachUpdateButton, index) => updateButton[index].classList.remove('active'))
         updateButton[index].classList.add('active')
     })
-})
+)
 
 
 // Al tener problemas para ajustar la altura de las dos secciones de Update, debido a sus diferenes estructuras, cuando están una al lado de otra mediante CSS (hasta 960px de ancho de pantalla), tuve que ayudarme de JavaScript para equilibrarlas.
@@ -56,17 +53,17 @@ let carrouselAltura = updateCarrousel.offsetHeight
 // Con esta función ajusto la altura de ambos como comentaba previamente
 function ajustaAltura() {
 // Para que el STYLE se aplique en pantallas de más de 960px de ancho
-  if (window.innerWidth >= 960) {
+  if (window.innerWidth >= 960) 
     // Le STYLE height igual a la altura del Carrousel con la variable declarada
     updateUl.style.height = carrouselAltura + 'px'
-} 
+ 
 // Para que se adapte de manera automática como ya tenía aplicado en CSS
-  else {
-    updateUl.style.height = 'auto'
-  }
+  else updateUl.style.height = 'auto'
 }
+
 // Para ejecutar la función cuando se carga la página
 ajustaAltura()
+
 // Para ejecutar la función al cambiar el tamaño de la ventana, ya que al comprobar el responsive, la altura del Carrousel variaba pero la del Ul de eventos se mantenía
 window.addEventListener('resize', ajustaAltura)
 
@@ -99,7 +96,7 @@ console.log(finderProvincia)
     // Le ADD 'active' a .finder__back
     // Le ADD 'active' a .finder__provincia de MISMO INDEX
 
-finderButton.forEach((eachButton, index) => {
+finderButton.forEach((eachButton, index) => 
     finderButton[index].addEventListener('click', () => {
             finderCourts[index].classList.add('active')
             finderAndalucia.classList.add('active')
@@ -107,7 +104,7 @@ finderButton.forEach((eachButton, index) => {
             finderBack.classList.add('active')
             finderProvincia[index].classList.add('active')
     })
-})
+)
 
 
 // Cuando CLICK en .finder__back
@@ -121,12 +118,12 @@ finderBack.addEventListener('click', () => {
     finderBack.classList.remove('active')
     finderUl.classList.remove('active')
     finderAndalucia.classList.remove('active')
-    finderProvincia.forEach((eachProvincia, index) => {
+    finderProvincia.forEach((eachProvincia, index) => 
         finderProvincia[index].classList.remove('active')
-    })
-    finderCourts.forEach((eachCourt, index) => {
+    )
+    finderCourts.forEach((eachCourt, index) => 
         finderCourts[index].classList.remove('active')
-    })
+    )
 })
 
 
@@ -141,9 +138,9 @@ console.log(lightbox)
 console.log(lightboxPista)
 
 // Mediante push, recojo las alturas de cada .lightbox__pista, ya que al tener contenidos diferentes, no son alturas iguales para todos
-lightboxPista.forEach((eachLightboxPista , index) => {
+lightboxPista.forEach((eachLightboxPista , index) => 
     alturasLightbox.push(lightboxPista[index].offsetHeight)
-})
+)
 
 // Muestro por consola el array de alturas para ver que las ha recogido correctamente
 console.log(alturasLightbox)
@@ -153,23 +150,19 @@ console.log(alturasLightbox)
     // Le ADD 'active' a .lightbox__pista del MISMO INDEX
     // Le REMOVE 'active' a .finder__back
 
-finderOpen.forEach((eachButtonPista, index) => {
-    finderOpen[index].addEventListener('click', function() {
+finderOpen.forEach((eachButtonPista, index) => 
+    finderOpen[index].addEventListener('click', () => {
         lightbox.classList.add('active')
         lightboxPista[index].classList.add('active')
         lightboxPista.forEach((eachPista, index) => {
             // Al probar la web en móvil, no se centraba al medio como debía con la propiedad de CSS "top". Por lo que decidí mediante esta condición, que a partir del ancho máximo de pantalla 480px, cada .lightbox__pista se colocase a 2rem del "top"
-            if (window.innerWidth < 480) {
-                lightboxPista[index].style.top = '2rem'
-            } 
+            if (window.innerWidth < 480) lightboxPista[index].style.top = '2rem' 
             // Aquí si, gracias al array de alturas que recogí, los centro verticalmente
-            else {
-                lightboxPista[index].style.top = `calc(50% - ${alturasLightbox[index] / 2}px)`
-            }
+            else lightboxPista[index].style.top = `calc(50% - ${alturasLightbox[index] / 2}px)`
         })
         finderBack.classList.remove('active')
     })
-})
+)
 
 // Declaro como constantes a TODOS los botones de cada contenido de Lightbox
 const lightboxButton = document.querySelectorAll('.lightbox__button')
@@ -182,12 +175,12 @@ console.log(lightboxButton)
     // Le REMOVE 'active' a TODOS .lightbox__pista
     // Le ADD 'active' a .finder__back
 
-lightboxButton.forEach((eachLightboxButton , index) => {
-    lightboxButton[index].addEventListener('click' , function(){
+lightboxButton.forEach((eachLightboxButton , index) => 
+    lightboxButton[index].addEventListener('click' , () => {
         lightbox.classList.remove('active')
-        lightboxPista.forEach((eachLichtboxPista , index) => {
+        lightboxPista.forEach((eachLichtboxPista , index) => 
             lightboxPista[index].classList.remove('active')
-        })
+        )
         finderBack.classList.add('active')
     })
-})
+)

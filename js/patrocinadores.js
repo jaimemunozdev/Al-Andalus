@@ -40,14 +40,12 @@ const patrocinadoresLi = document.querySelectorAll('.patrocinadores__li')
     //  Le ADD 'active' a .patrocinadores__container de MISMO INDEX
     //  Le STYLE "height = alturasContainer (de MISMO INDEX)"
     
-patrocinadoresLi.forEach((eachLi, index) => {
+patrocinadoresLi.forEach((eachLi, index) => 
     patrocinadoresLi[index].addEventListener('click', () => {
-        patrocinadoresContainer.forEach((eachContainer, index) => {
-            patrocinadoresContainer[index].style.height = '0'
-        })
+        patrocinadoresContainer.forEach((eachContainer, index) => patrocinadoresContainer[index].style.height = '0')
         patrocinadoresContainer[index].classList.add('active')
         patrocinadoresContainer[index].style.height = alturasContainer[index] + 'px'
     })
-})
+)
 
 
