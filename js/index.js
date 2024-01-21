@@ -49,8 +49,8 @@ updateButton.forEach((eachUpdateButton, index) => {
 
 // Al tener problemas para ajustar la altura de las dos secciones de Update, debido a sus diferenes estructuras, cuando están una al lado de otra mediante CSS (hasta 960px de ancho de pantalla), tuve que ayudarme de JavaScript para equilibrarlas.
     // Para ello, declaré como constantes al Carrousel, a la lista de eventos, y como variable let a la altura del Carrousel
-const updateCarrousel = document.querySelector('.update__carrousel');
-const updateUl = document.querySelector('.update__ul');
+const updateCarrousel = document.querySelector('.update__carrousel')
+const updateUl = document.querySelector('.update__ul')
 let carrouselAltura = updateCarrousel.offsetHeight
 
 // Con esta función ajusto la altura de ambos como comentaba previamente
@@ -155,8 +155,8 @@ console.log(alturasLightbox)
 
 finderOpen.forEach((eachButtonPista, index) => {
     finderOpen[index].addEventListener('click', function() {
-        lightbox.classList.add('active');
-        lightboxPista[index].classList.add('active');
+        lightbox.classList.add('active')
+        lightboxPista[index].classList.add('active')
         lightboxPista.forEach((eachPista, index) => {
             // Al probar la web en móvil, no se centraba al medio como debía con la propiedad de CSS "top". Por lo que decidí mediante esta condición, que a partir del ancho máximo de pantalla 480px, cada .lightbox__pista se colocase a 2rem del "top"
             if (window.innerWidth < 480) {
